@@ -1,14 +1,15 @@
 # IPMon
 
 To store clients alive signals and view the log.
+The logs are stored for each client in seperate text files.
 
 ## showip.php
 Called by client to store its signal and retrieve ip and/or time.
 
 | Parameter   | Description                     |
 |-------------|---------------------------------|
-| n=Pico1     | Set 'Pico1' as client name      |
-| data=x      | Store 'x' for a signal          |
+| n=Pico1     | set 'Pico1' as client name      |
+| data=x      | store 'x' for a signal          |
 | ret=ip      | return client's IP address      |
 | ret=time    | return current server time      |
 | ret=time-ip | return time and ip              |
@@ -17,6 +18,16 @@ Called by client to store its signal and retrieve ip and/or time.
 
 ## list.php
 To view the logs. A list is generated with the latest activity of each client, with hyperlinks to the actual log files.
+
+## Log files
+Three files are generated for each client. For a client named "Dev" they would be:
+| File        | Description                  |
+|-------------|------------------------------|
+| Dev_ip.txt  | last IP and data in one line |
+| Dev_log.txt | current log                  |
+| Dev_log.bak | old logs                     |
+
+When the current log file exceeds 50KB, it is pushed to the .bak file.
 
 ## Time Zone
 Both scripts' defualt timezone is set in the codes to Europe/Berlin. It can be set per request using "tz" parameter. Don't forget to replace the "/" with urlencoded version "%2F" when sending the request.
