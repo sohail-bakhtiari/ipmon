@@ -13,6 +13,7 @@
 			border: 2px solid #4F7849;
 			background-color: #EEEEEE;
 			width: 80%;
+			height: 200px;
 			text-align: center;
 			border-collapse: collapse;
 		}
@@ -31,6 +32,26 @@
 
 		table.comicGreen tr:nth-child(even) {
 			background: #CEE0CC;
+		}
+
+		table.comicGreen thead {
+			background: #4F7849;
+			background: -moz-linear-gradient(top, #7b9a76 0%, #60855b 66%, #4F7849 100%);
+			background: -webkit-linear-gradient(top, #7b9a76 0%, #60855b 66%, #4F7849 100%);
+			background: linear-gradient(to bottom, #7b9a76 0%, #60855b 66%, #4F7849 100%);
+			border-bottom: 1px solid #444444;
+		}
+
+		table.comicGreen thead th {
+			font-size: 15px;
+			font-weight: bold;
+			color: #FFFFFF;
+			text-align: center;
+			border-left: 2px solid #D0E4F5;
+		}
+
+		table.comicGreen thead th:first-child {
+			border-left: none;
 		}
 
 		table.comicGreen tfoot {
